@@ -1,0 +1,23 @@
+﻿@model List<Personal_Department_AspNetCoreMVC.Models.Department>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>DEPARTMAN ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>DETAYLAR</th>
+    </tr>
+    @foreach (var depart in Model)
+    {
+        <tr>
+            <td>@depart.DepartmentId</td>
+            <td>@depart.DepartmentName</td>
+            <td><a class="btn btn-danger" asp-controller="Department" asp-action="Delete" asp-route-id="@depart.DepartmentId">SİL</a></td>
+            <td><a class="btn btn-success" asp-controller="Department" asp-action="DepartmentUpdate" asp-route-id="@depart.DepartmentId">GÜNCELLE</a></td>
+            <td><a class="btn btn-warning" asp-controller="Department" asp-action="GetDetails" asp-route-id="@depart.DepartmentId">DETAYLAR</a></td>
+        </tr>
+    }
+</table>
+
+<a class="btn btn-info" asp-controller="Department" asp-action="NewDepartment">Yeni Departman</a>

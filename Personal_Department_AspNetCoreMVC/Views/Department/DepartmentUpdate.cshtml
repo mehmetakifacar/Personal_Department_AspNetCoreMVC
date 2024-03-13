@@ -1,0 +1,12 @@
+﻿@model Personal_Department_AspNetCoreMVC.Models.Department
+
+@using (Html.BeginForm("DepartmentUpdate", "Department", FormMethod.Post))
+{
+    @Html.LabelFor(m=>m.DepartmentId,"Departman Id",new{@style="font-weight:bold;"})
+    @Html.TextBoxFor(m=>m.DepartmentId,new{@class="form-control"})
+    <br/>
+    @Html.LabelFor(m=>m.DepartmentName,"Departman Adı")
+    @Html.TextBoxFor(m=>m.DepartmentName,new{@class="form-control"})
+    <br/>
+    <button class="btn btn-success">GÜNCELLE</button>
+}

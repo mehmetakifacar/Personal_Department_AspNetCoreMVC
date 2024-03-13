@@ -1,0 +1,21 @@
+﻿@model List<Personal>
+<br />
+<h2>@ViewBag.value Departmanı</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>AD</th>
+        <th>SOYAD</th>
+        <th>ŞEHİR</th>
+    </tr>
+    @foreach (var details in Model)
+    {
+        <tr>
+            <td>@details.PersonalId</td>
+            <td>@details.PersonalName</td>
+            <td>@details.PersonalSurname</td>
+            <td>@details.PersonalCity</td>
+        </tr>
+
+    }
+</table>

@@ -1,0 +1,18 @@
+﻿@model Personal_Department_AspNetCoreMVC.Models.Personal
+
+@using (Html.BeginForm("NewPersonal", "Personal", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.PersonalName, "Personel Adı", new { @style = "font-weight:bold;" })
+    @Html.TextBoxFor(m => m.PersonalName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.PersonalSurname, "Personel Soyadı", new { @style = "font-weight:bold;" })
+    @Html.TextBoxFor(m => m.PersonalSurname, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.PersonalCity, "Şehir", new { @style = "font-weight:bold;" })
+    @Html.TextBoxFor(m => m.PersonalCity, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.DepartmentId, "Departman", new { @style = "font-weight:bold;" })
+    @Html.DropDownListFor(m => m.DepartmentId, (List<SelectListItem>)ViewBag.values, new { @class = "form-select" })
+    <br />
+    <button class="btn btn-info">Ekle</button>
+}

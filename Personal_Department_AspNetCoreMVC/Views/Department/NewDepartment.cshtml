@@ -1,0 +1,12 @@
+﻿@model Personal_Department_AspNetCoreMVC.Models.Department
+
+
+<form class="form-group" method="post">
+    @using (Html.BeginForm("NewDepartment", "Department", FormMethod.Post))
+    {
+        @Html.LabelFor(m => m.DepartmentName, "Departman Adı", new { @style = "font-weight:bold;" })
+        @Html.TextBoxFor(m => m.DepartmentName, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Ekle</button>
+    }
+</form>

@@ -1,0 +1,27 @@
+﻿@model List<Personal_Department_AspNetCoreMVC.Models.Personal>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>PERSONEL AD</th>
+        <th>PERSONAL SOYAD</th>
+        <th>ŞEHİR</th>
+        <th>DEPARTMAN</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var personal in Model)
+    {
+        <tr>
+            <td>@personal.PersonalId</td>
+            <td>@personal.PersonalName</td>
+            <td>@personal.PersonalSurname</td>
+            <td>@personal.PersonalCity</td>
+            <td>@personal.Department.DepartmentName</td>
+            <td><a class="btn btn-danger" asp-controller="Personal" asp-action="Delete" asp-route-id="@personal.PersonalId">SİL</a></td>
+            <td><a class="btn btn-success" asp-controller="Personal" asp-action="PersonalUpdate" asp-route-id="@personal.PersonalId">GÜNCELLE</a></td>
+        </tr>
+    }
+</table>
+
+<a class="btn btn-info" asp-controller="Personal" asp-action="NewPersonal">Personel Ekle</a>

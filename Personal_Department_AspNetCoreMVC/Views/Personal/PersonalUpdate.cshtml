@@ -1,0 +1,21 @@
+﻿@model Personal_Department_AspNetCoreMVC.Models.Personal
+
+@using (Html.BeginForm("PersonalUpdate", "Personal", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.PersonalId, "Personel Id", new { @style = "font-weight:bold;" })
+    @Html.TextBoxFor(m => m.PersonalId, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.PersonalName, "Personel Adı", new { @style = "font-weight:bold;" })
+    @Html.TextBoxFor(m => m.PersonalName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.PersonalSurname, "Personel Soyadı", new { @style = "font-weight:bold;" })
+    @Html.TextBoxFor(m => m.PersonalSurname, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.PersonalCity, "Şehir", new { @style = "font-weight:bold;" })
+    @Html.TextBoxFor(m => m.PersonalCity, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.DepartmentId, "Departman Id", new { @style = "font-weight:bold;" })
+    @Html.TextBoxFor(m => m.DepartmentId, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+}
